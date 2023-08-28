@@ -357,12 +357,17 @@
       if (end_index > total_page)
         end_index = total_page;
 
+        if(arryDisplay.length==0){
+          $("#loader").hide();
+        }
+
       if (parseInt(start_index) !== parseInt(end_index)) {
         for (var i = start_index; i < end_index; i++) {
           var value = arryDisplay[i];
           tblData = insertIntoTable(value, tblData);
         }
 
+        
         $("#tbl-display  tbody").remove();
         $("#tbl-display").append(tblData);
         $("#loader").hide();
